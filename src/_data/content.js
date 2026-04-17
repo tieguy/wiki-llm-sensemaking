@@ -1,7 +1,7 @@
 const header =
   'A timeline of intersections between Wikimedia projects, including Wikipedia, and large language models.';
 const footer =
-  '<a href="https://github.com/tieguy/wiki-llm-sensemaking"><i class="fa-brands fa-github"></i> Source on GitHub</a>';
+  '<a href="https://github.com/tieguy/wiki-llm-sensemaking"><i class="fa-brands fa-github"></i> Source on GitHub</a> &middot; <a href="https://bsky.app/profile/lu.is" rel="me">Bluesky: @lu.is</a> &middot; <a href="https://social.coop/@luis_in_brief" rel="me"><i class="fa-brands fa-mastodon"></i> @luis_in_brief@social.coop</a>';
 const entries = [
   {
     id: 'gpt3-paper-wikipedia-training',
