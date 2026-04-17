@@ -1,5 +1,9 @@
-# Goal: Data Gathering for Sensemaking
-I'm trying to gather a timeline to help myself understand the interrelationships of Wikimedia projects and large language models.
+# Data Gathering for Sensemaking
+I'm trying to gather a timeline to help myself understand the interrelationships of Wikimedia projects and large language models. Some topics that might be covered would include:
+* editing and reverting: how have LLM-created and LLM-involved edits surfaced, been monitored, and been removed?
+* readership: how has intermediation of readers (first by Google knowledge boxes and then by LLMs more generally) impacted us?
+* scraping: how has bot traffic impacted WMF's servers?
+* training: how has Wikimedia content been used by LLM training, both academically and professionally?
 
 # Tone: Neutral-ish POV
 Choice of examples and data points can never be truly neutral. But I'm trying to build a genuine sense-making instrument here, so I will try to cover a broadly representative set of datasets and data points. Pull requests in that spirit are welcome.
