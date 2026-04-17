@@ -1,0 +1,33 @@
+{
+  "name": "wiki-llm-sensemaking",
+  "version": "0.1.0",
+  "description": "A timeline of events at the intersection of Wikipedia / Wikimedia projects and LLMs. Built on Molly White's static-timeline-generator.",
+  "private": true,
+  "scripts": {
+    "serve": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "prettier": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tieguy/wiki-llm-sensemaking.git"
+  },
+  "keywords": [
+    "timeline",
+    "wikipedia",
+    "llm"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "autoprefixer": "^10.4.13",
+    "ejs": "^3.1.6",
+    "eleventy-sass": "^2.1.3",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "moment": "^2.29.1",
+    "postcss": "^8.4.20"
+  }
+}
