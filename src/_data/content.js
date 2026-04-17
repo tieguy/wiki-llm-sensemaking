@@ -2,52 +2,48 @@ const header = 'Welcome to this wonderful example timeline.';
 const footer = 'A footer goes here.';
 const entries = [
   {
-    id: 'cat',
-    categories: ['cat'],
-    color: 'green',
-    faicon: 'cat',
-    datetime: '2021-01-01 05:00',
-    title: 'Cats are very good',
-    image: {
-      link: 'http://placekitten.com',
-      src: 'http://placekitten.com/200/300',
-      alt: 'A placeholder kitten',
-      caption: 'Kitten!',
-    },
-    body: "The best thing in the universe is a cardboard box. Chirp at birds catasstrophe for meowwww for hiding behind the couch until lured out by a feathery toy for morning beauty routine of licking self sugar, my siamese, stalks me (in a good way), day and night lick the other cats. Pushed the mug off the table shove bum in owner's face like camera lens or tickle my belly at your own peril i will pester for food when you're in the kitchen even if it's salad and grass smells good, licks your face, but hiiiiiiiiii feed me now.",
+    id: 'gpt3-paper-wikipedia-training',
+    title: 'GPT-3 paper discloses Wikipedia as training data',
+    datetime: '2020-05-28',
+    body: 'OpenAI researchers publish "Language Models are Few-Shot Learners" on arXiv, describing the training dataset for GPT-3. The paper explicitly lists English Wikipedia (approximately 3 billion tokens, ~3% of the training mix by token count) alongside Common Crawl, WebText2, and two book corpora. Wikipedia is weighted at 3x relative to its raw token share, reflecting OpenAI\'s view of it as higher-quality data.',
     links: [
       {
-        href: 'https://en.wikipedia.org/wiki/Cat',
-        linkText: 'Cat',
+        href: 'https://arxiv.org/abs/2005.14165',
+        linkText: 'Primary source: "Language Models are Few-Shot Learners" (arXiv:2005.14165)',
       },
     ],
   },
+
   {
-    id: 'dog',
-    categories: ['dog'],
-    color: 'green',
-    faicon: 'dog',
-    datetime: '2021-05-01 23:55',
-    title: 'Puppies are great too',
-    image: {
-      link: 'http://place-puppy.com',
-      src: 'https://place-puppy.com/300x300',
-      alt: 'A placeholder puppy',
-      caption: 'Puppy!',
-    },
-    body: 'Doggo ipsum sub woofer smol wow very biscit aqua doggo pupper dat tungg tho big ol pupper, very jealous pupper mlem heckin angery woofer very jealous pupper. Blep waggy wags long doggo, corgo. Tungg wow such tempt mlem very jealous pupper boofers lotsa pats, snoot smol big ol ruff doge super chub, long doggo heckin good boys and girls h*ck heck. Shoober blop many pats borkf, such treat. Big ol what a nice floof long water shoob wrinkler heck sub woofer, pupper porgo wow very biscit.',
+    id: 'wikiproject-ai-cleanup-founded',
+    title: 'WikiProject AI Cleanup founded on English Wikipedia',
+    datetime: '2023-12-04',
+    body: 'A group of English Wikipedia editors formally establishes WikiProject AI Cleanup, describing it as "a collaboration to combat the increasing problem of unsourced, poorly-written AI-generated content on Wikipedia."',
     links: [
       {
-        href: 'https://en.wikipedia.org/wiki/Dog',
-        linkText: 'Dog',
+        href: 'https://en.wikipedia.org/w/index.php?title=Wikipedia:WikiProject_AI_Cleanup&oldid=1188248273',
+        linkText: 'Primary source: WikiProject AI Cleanup (founding revision)',
       },
       {
-        href: 'https://en.wikipedia.org/wiki/Canis',
-        linkText: 'Canis',
+        href: 'https://www.404media.co/the-editors-protecting-wikipedia-from-ai-hoaxes/',
+        linkText: '404 Media: "The Editors Protecting Wikipedia from AI Hoaxes"',
+      },
+    ],
+  },
+
+  {
+    id: 'wikimedia-futures-lab',
+    title: 'Wikimedia Futures Lab convenes in Frankfurt',
+    datetime: '2026-01-30',
+    body: 'Over 100 Wikimedians, affiliate representatives, and external experts gather in Frankfurt for the Wikimedia Futures Lab, co-organized by Wikimedia Deutschland and the Wikimedia Foundation. Participants heard from external experts and discussed trends including the rapid evolution of AI and changing audience behavior.',
+    links: [
+      {
+        href: 'https://diff.wikimedia.org/2026/04/09/inside-the-wikimedia-futures-lab-how-the-wikimedia-movement-is-responding-to-a-changing-internet/',
+        linkText: 'Primary source: Diff — "Inside the Wikimedia Futures Lab"',
       },
       {
-        href: 'https://en.wikipedia.org/wiki/Lassie',
-        linkText: 'Lassie',
+        href: 'https://meta.wikimedia.org/wiki/Wikimedia_Futures_Lab',
+        linkText: 'Meta-Wiki: Wikimedia Futures Lab (program, participant list, documentation)',
       },
     ],
   },
