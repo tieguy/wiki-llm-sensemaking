@@ -1,10 +1,14 @@
-const header = 'Welcome to this wonderful example timeline.';
-const footer = 'A footer goes here.';
+const header =
+  'A timeline of intersections between Wikimedia projects, including Wikipedia, and large language models.';
+const footer =
+  '<a href="https://github.com/tieguy/wiki-llm-sensemaking"><i class="fa-brands fa-github"></i> Source on GitHub</a>';
 const entries = [
   {
     id: 'gpt3-paper-wikipedia-training',
     title: 'GPT-3 paper discloses Wikipedia as training data',
     datetime: '2020-05-28',
+    categories: ['training'],
+    faicon: 'robot',
     body: 'OpenAI researchers publish "Language Models are Few-Shot Learners" on arXiv, describing the training dataset for GPT-3. The paper explicitly lists English Wikipedia (approximately 3 billion tokens, ~3% of the training mix by token count) alongside Common Crawl, WebText2, and two book corpora. Wikipedia is weighted at 3x relative to its raw token share, reflecting OpenAI\'s view of it as higher-quality data.',
     links: [
       {
@@ -18,6 +22,8 @@ const entries = [
     id: 'wikiproject-ai-cleanup-founded',
     title: 'WikiProject AI Cleanup founded on English Wikipedia',
     datetime: '2023-12-04',
+    categories: ['editing and reverting'],
+    faicon: 'broom',
     body: 'A group of English Wikipedia editors formally establishes WikiProject AI Cleanup, describing it as "a collaboration to combat the increasing problem of unsourced, poorly-written AI-generated content on Wikipedia."',
     links: [
       {
@@ -35,6 +41,8 @@ const entries = [
     id: 'wikimedia-futures-lab',
     title: 'Wikimedia Futures Lab convenes in Frankfurt',
     datetime: '2026-01-30',
+    categories: ['strategy and futurism'],
+    faicon: 'compass',
     body: 'Over 100 Wikimedians, affiliate representatives, and external experts gather in Frankfurt for the Wikimedia Futures Lab, co-organized by Wikimedia Deutschland and the Wikimedia Foundation. Participants heard from external experts and discussed trends including the rapid evolution of AI and changing audience behavior.',
     links: [
       {
@@ -50,9 +58,10 @@ const entries = [
 ];
 
 // Page details
-const pageTitle = 'Static timeline generator'; // The title of the page that shows in the browser tab
-const pageDescription = 'A super fancy timeline'; // The description of the page for search engines
-const pageAuthor = 'Jane Doe'; // Your name
+const pageTitle = 'Wikimedia and LLM Timeline';
+const pageDescription =
+  'A timeline of intersections between Wikimedia projects, including Wikipedia, and large language models.';
+const pageAuthor = 'Luis Villa';
 const showMirrorLinks = true; // Whether to show links to the Wayback Machine and archive.is mirrors.
 
 // DON'T EDIT BELOW THIS LINE! --------------------------------------------------------------------
