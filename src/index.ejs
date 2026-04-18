@@ -42,7 +42,7 @@
         >
           <div class="timeline-icon <%- entry.color || 'grey' %>" title="<%= entry.faicon %>">
             <% if (entry.faicon) { %>
-            <i class="fas fa-<%= entry.faicon %>" aria-hidden="true"></i>
+            <i class="fa-<%= entry.faiconStyle || 'solid' %> fa-<%= entry.faicon %>" aria-hidden="true"></i>
             <% } %>
           </div>
           <div class="timeline-description">
@@ -78,7 +78,6 @@
                 <% if (content.showMirrorLinks) { %>
                   <span class="linkMirrors">
                       (<a href="https://web.archive.org/web/*/<%= link.href %>" target="_blank">Wayback</a>)
-                      (<a href="https://archive.is/<%= link.href %>" target="_blank">Archive.is</a>)
                   </span>
                 <% } %>
               </li>
