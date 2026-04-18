@@ -1,9 +1,17 @@
 # TODO
 
-Concrete engineering tasks and deferred decisions. For editorial
-conventions, see `CLAUDE.md`.
+## Content/data ideas
 
-## Font Awesome brands bump
+### "legal" category?
+Could hit some of the key legal decisions around fair use.
+
+### Parallel data rail (sparklines)
+
+See `CLAUDE.md` → "Open work: parallel data rail." Not yet started;
+defer until enough content to know which series matter.
+
+## Code tasks
+### Font Awesome brands bump
 
 Goal: let entries use org logos (Wikipedia-W, OpenAI, Mastodon, GitHub,
 etc.) as their spine icon, not just semantic solid icons.
@@ -38,7 +46,7 @@ FA6 long-form class names, which work in beta2 and in 6.5+).
 Non-goal: WMF has never had a Font Awesome icon. Getting that would
 need a custom inline SVG, handled separately.
 
-## Per-entry colors under the new palette
+### Per-entry colors under the new palette
 
 The palette in `src/css/_colors.sass` now offers `slate`, `brick`,
 `moss`, `amber`, `grey`. Existing entries have no `color` set and fall
@@ -52,8 +60,3 @@ through to `grey`. Decide whether to assign colors by category:
 
 Not done yet — defer until the palette has been eyeballed against real
 entries.
-
-## Parallel data rail (sparklines)
-
-See `CLAUDE.md` → "Open work: parallel data rail." Not yet started;
-defer until enough content to know which series matter.
