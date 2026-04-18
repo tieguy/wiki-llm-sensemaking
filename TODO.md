@@ -28,3 +28,10 @@ through to `grey`. Decide whether to assign colors by category:
 
 Not done yet — defer until the palette has been eyeballed against real
 entries.
+
+### Displaying spans of time between linked entries
+
+Some events unfold over a range of dates (e.g. TomWikiAssist: first edit
+Feb 25 → blocked Mar 12). Figure out a way to visually represent such
+spans — perhaps a connecting bracket or shaded region between two entries
+that share a common `spanId` or similar linking field.
