@@ -62,15 +62,25 @@ fair?*
   dir. Site connection is done in the Netlify UI, not from this repo.
 - **Content:** All timeline entries live in `src/_data/content.js`. Schema
   per upstream: `id`, `title`, `body`, `datetime` (moment-parseable),
-  optional `categories`, `color`, `faicon`, `image`, `links`.
+  optional `categories`, `color`, `faicon`, `faiconStyle`, `image`, `links`.
+- **Icons:** Font Awesome 6.7.2 loaded from cdnjs. Default icon style is
+  `solid`; set `faiconStyle: 'brands'` on an entry to use a brand icon (e.g.
+  `faicon: 'wikipedia-w'`, `faicon: 'google'`, `faicon: 'creative-commons'`).
+  No OpenAI brand icon exists in FA 6.7.2.
+- **Colors:** Assigned by primary category. Convention: `training` → `slate`,
+  `editing and reverting` → `brick`, `strategy and futurism` → `moss`,
+  `readership` → `amber`, `scraping` → `grey`. Colors defined in
+  `src/css/_colors.sass`.
+- **Mirror links:** Wayback Machine links are shown per entry. archive.is links
+  were removed.
 
 [stg]: https://github.com/molly/static-timeline-generator
 
 ### Working conventions
 
-- **Branches:** development happens on feature branches named
-  `claude/<topic>-<slug>`. Do not push directly to `main`. Merges to `main`
-  happen via PR, which the maintainer opens.
+- **Branches:** content additions may be committed directly to `main` when
+  the maintainer is working interactively. Feature branches named
+  `claude/<topic>-<slug>` are used for larger changes; merges happen via PR.
 - **Commits:** small, scoped, descriptive. Separate scaffolding/tooling
   commits from content commits.
 - **Don't touch without asking:**
