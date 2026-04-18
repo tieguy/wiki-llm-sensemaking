@@ -3,7 +3,7 @@ const header =
 const footer =
   '<a href="https://github.com/tieguy/wiki-llm-sensemaking"><i class="fa-brands fa-github"></i> Source on GitHub</a> &middot; <a href="https://bsky.app/profile/lu.is" rel="me">Bluesky: @lu.is</a> &middot; <a href="https://social.coop/@luis_in_brief" rel="me"><i class="fa-brands fa-mastodon"></i> @luis_in_brief@social.coop</a>';
 
-const events = [
+const entries = [
   {
     id: 'gpt3-paper-wikipedia-training',
     title: 'GPT-3 paper discloses Wikipedia as training data',
