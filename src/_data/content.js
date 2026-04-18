@@ -1,5 +1,5 @@
 const header =
-  'A timeline of intersections between Wikimedia projects, including Wikipedia, and large language models. Pull requests welcome.';
+  'A timeline of intersections between Wikimedia projects and LLMs, to help make sense of them. <a href="https://github.com/tieguy/wiki-llm-sensemaking">Pull requests welcome.</a>';
 const footer =
   '<a href="https://github.com/tieguy/wiki-llm-sensemaking"><i class="fa-brands fa-github"></i> Source on GitHub &middot; pull requests welcome</a> &middot; <a href="https://bsky.app/profile/lu.is" rel="me">Bluesky: @lu.is</a> &middot; <a href="https://social.coop/@luis_in_brief" rel="me"><i class="fa-brands fa-mastodon"></i> @luis_in_brief@social.coop</a>';
 
