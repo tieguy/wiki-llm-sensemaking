@@ -6,7 +6,7 @@ const footer =
 const entries = [
   {
     id: 'gpt3-paper-wikipedia-training',
-    title: 'GPT-3 paper discloses Wikipedia as training data',
+    title: 'OpenAI GPT-3 whitepaper discloses Wikipedia as training data',
     datetime: '2020-05-28',
     categories: ['training'],
 
@@ -39,6 +39,27 @@ const entries = [
       },
     ],
   },
+
+  {
+    id: 'doe-v-github-filing',
+    title: 'Doe v. GitHub class action filed in part based on disclosures in OpenAI whitepapers',
+    datetime: '2022-11-03',
+    categories: ['training'],
+
+    faicon: 'gavel',
+    body: 'The first major class-action lawsuit against GitHub, Microsoft, and OpenAI uses OpenAI’s technical whitepapers as evidence that OpenAI trained on GitHub-hosted source code, and violated open-source licenses.',
+    links: [
+      {
+        href: 'https://githubcopilotlitigation.com/2022/11/03/github-copilot-litigation/',
+        linkText: '"GitHub Copilot litigation" (Matthew Butterick Blog)',
+      },
+      {
+        href: 'https://arxiv.org/abs/2107.03374',
+        linkText: '"Evaluating Large Language Models Trained on Code" (OpenAI Codex Whitepaper)',
+      },
+    ],
+  },
+
 
   {
     id: 'wikimedia-enterprise-announced',
@@ -76,11 +97,12 @@ const entries = [
 
   {
     id: 'gpt4-technical-report-no-training-data',
-    title: 'GPT-4 technical report declines to disclose training data',
+    title: 'OpenAI's GPT-4 whitepaper declines to disclose training data',
     datetime: '2023-03-15',
     categories: ['training'],
 
-    faicon: 'eye-slash',
+    faicon: 'fa-openai',
+    faiconStyle: 'brands',
     body: 'OpenAI publishes the GPT-4 Technical Report, explicitly declining to disclose details about training data, a marked departure from the GPT-3 paper\'s disclosure of Wikipedia as a named training source.',
     links: [
       {
