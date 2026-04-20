@@ -97,7 +97,7 @@ const entries = [
 
   {
     id: 'gpt4-technical-report-no-training-data',
-    title: 'OpenAI's GPT-4 whitepaper declines to disclose training data',
+    title: 'OpenAI\'s GPT-4 whitepaper declines to disclose training data',
     datetime: '2023-03-15',
     categories: ['training'],
 
