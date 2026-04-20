@@ -101,7 +101,7 @@ const entries = [
     datetime: '2023-03-15',
     categories: ['training'],
 
-    faicon: 'fa-openai',
+    faicon: 'openai',
     faiconStyle: 'brands',
     body: 'OpenAI publishes the GPT-4 Technical Report, explicitly declining to disclose details about training data, a marked departure from the GPT-3 paper\'s disclosure of Wikipedia as a named training source.',
     links: [
