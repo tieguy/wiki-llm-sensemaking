@@ -119,12 +119,10 @@ footer.page-footer
 	width: 100vw
 	left: 50%
 	margin-left: -50vw
-	background-color: $filterbar-background
 	border-top: 1px solid $timeline-line-color
-	border-bottom: 1px solid $timeline-line-color
-	margin-top: 50px
-	margin-bottom: 30px
-	padding: 24px 0
+	margin-top: 40px
+	margin-bottom: 20px
+	padding: 14px 0 16px 0
 	z-index: 3
 
 	&[aria-hidden="true"]
@@ -132,6 +130,7 @@ footer.page-footer
 
 .timeline > .year-banner:first-child
 	margin-top: 0
+	border-top: none
 
 .year-banner-inner
 	box-sizing: border-box
@@ -140,16 +139,17 @@ footer.page-footer
 	margin: 0 auto
 	padding: 0 10px
 	display: flex
-	align-items: center
+	align-items: baseline
 	gap: 32px
 	flex-wrap: wrap
 
 .year-banner-year
 	font-family: 'Roboto Slab', serif
-	font-size: 3rem
+	font-size: 2rem
 	line-height: 1
-	font-weight: 700
-	color: $header-footer-background
+	font-weight: 500
+	color: $timestamp-color
+	letter-spacing: 0.02em
 	flex: 0 0 auto
 
 .year-banner-factoids
@@ -157,18 +157,44 @@ footer.page-footer
 	list-style: none
 	padding: 0
 	margin: 0
-	min-height: 1.5em
-
-	&:not(.year-banner-factoids-empty)
-		display: flex
-		gap: 24px
-		flex-wrap: wrap
+	display: flex
+	gap: 32px
+	flex-wrap: wrap
+	align-items: baseline
 
 .year-factoid
 	flex: 0 1 auto
 	font-size: 0.9rem
 	line-height: 130%
 	color: $main-link-color
+
+.year-factoid-stat
+	display: inline-flex
+	align-items: baseline
+	gap: 10px
+
+.year-factoid-label
+	font-size: 0.72rem
+	text-transform: uppercase
+	letter-spacing: 0.06em
+	color: $timestamp-color
+	white-space: nowrap
+
+.year-factoid-value
+	font-family: 'Roboto Slab', serif
+	font-size: 1.5rem
+	line-height: 1
+	font-weight: 500
+	color: $header-footer-background
+
+a.year-factoid-value
+	text-decoration: none
+	border-bottom: 1px dotted $timeline-line-color
+
+	&:hover,
+	&:focus
+		text-decoration: none
+		border-bottom-color: currentColor
 
 .timeline-icon
 	position: absolute
@@ -328,10 +354,10 @@ footer.page-footer
 	.year-banner-inner
 		flex-direction: column
 		align-items: flex-start
-		gap: 12px
+		gap: 10px
 
 	.year-banner-year
-		font-size: 2.25rem
+		font-size: 1.5rem
 
 // DARK MODE
 @media (prefers-color-scheme: dark)
@@ -381,15 +407,22 @@ footer.page-footer
 				background-color: darken($color, 20%)
 
 	.year-banner
-		background-color: $dark-filterbar-background
 		border-top-color: $dark-timeline-line-color
-		border-bottom-color: $dark-timeline-line-color
 
 	.year-banner-year
-		color: $dark-link-color
+		color: $dark-main-color
 
 	.year-factoid
 		color: $dark-main-color
+
+	.year-factoid-label
+		color: $dark-main-color
+
+	.year-factoid-value
+		color: $dark-link-color
+
+	a.year-factoid-value
+		border-bottom-color: $dark-timeline-line-color
 
 	/* Arrows */
 	@media only screen and (min-width: 415px)

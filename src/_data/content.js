@@ -351,39 +351,54 @@ const entries = [
 ];
 
 // Per-year factoids displayed in the year banners that interrupt the
-// timeline rail. Each entry is an HTML string. Keep them short — the
-// banner is a glance, not a paragraph. The convention here is that a
-// year's banner summarizes the *previous* calendar year, so a reader
-// encountering e.g. the 2024 banner sees context on how 2023 went.
+// timeline rail. Each factoid is either a plain HTML string (rendered
+// as-is inside an <li>) or a structured object with { label, value,
+// href } — the structured form renders as a small-caps label above a
+// large value, optionally wrapped in a link.
 //
-// Similarweb global ranks below are the best snapshots I could confirm
-// via public sources; they are not year-end averages. Gaps marked TODO
-// need verification against a primary Similarweb source before use.
+// The convention here is that a year's banner summarizes the *previous*
+// calendar year. The Similarweb ranks below are for the preceding
+// December, sourced from the revision of Wikipedia's "List of
+// most-visited websites" that was live shortly after that December.
+// (Rankings before 2022 are omitted because Similarweb changed
+// methodology, breaking continuity.)
 const yearFactoids = {
   2020: [],
-  2021: [
-    '<strong>Wikipedia.org Similarweb global rank, 2020:</strong> #5 (<a href="https://www.visualcapitalist.com/the-50-most-visited-websites-in-the-world/">Visual Capitalist</a>, Similarweb data Nov 2020)',
-  ],
+  2021: [],
   2022: [
-    // TODO: verify 2021 Similarweb rank. DataReportal's Digital 2022
-    // report used Similarweb full-year 2021 data; rank not confirmed.
-    // https://datareportal.com/reports/digital-2022-worlds-top-websites
+    {
+      label: 'Similarweb global rank, Dec 2021',
+      value: '#7',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1068112107',
+    },
   ],
   2023: [
-    // TODO: verify 2022 Similarweb rank.
-    // https://datareportal.com/reports/digital-2023-global-overview-report
+    {
+      label: 'Similarweb global rank, Dec 2022',
+      value: '#7',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1132768096',
+    },
   ],
   2024: [
-    // TODO: verify 2023 Similarweb rank. Coverage of the March 2023
-    // snapshot of the Wikipedia "List of most-visited websites" article
-    // reports #6 per Similarweb, but this is a Q1 2023 snapshot, not a
-    // 2023 year-end figure.
+    {
+      label: 'Similarweb global rank, Dec 2023',
+      value: '#7',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1199395761',
+    },
   ],
   2025: [
-    '<strong>Wikipedia.org Similarweb global rank, 2024:</strong> #7 (Similarweb, Aug 2024 data)',
+    {
+      label: 'Similarweb global rank, Dec 2024',
+      value: '#7',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1268360156',
+    },
   ],
   2026: [
-    '<strong>Wikipedia.org Similarweb global rank, 2025:</strong> #8 (Similarweb, 2025 data)',
+    {
+      label: 'Similarweb global rank, Dec 2025',
+      value: '#9',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1332542122',
+    },
   ],
 };
 

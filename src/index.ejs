@@ -51,11 +51,20 @@
             <% if (banner.factoids && banner.factoids.length) { %>
             <ul class="year-banner-factoids">
               <% banner.factoids.forEach(function(f){ %>
+              <% if (typeof f === 'string') { %>
               <li class="year-factoid"><%- f %></li>
+              <% } else { %>
+              <li class="year-factoid year-factoid-stat">
+                <span class="year-factoid-label"><%= f.label %></span>
+                <% if (f.href) { %>
+                <a class="year-factoid-value" href="<%= f.href %>"><%- f.value %></a>
+                <% } else { %>
+                <span class="year-factoid-value"><%- f.value %></span>
+                <% } %>
+              </li>
+              <% } %>
               <% }) %>
             </ul>
-            <% } else { %>
-            <div class="year-banner-factoids year-banner-factoids-empty" aria-hidden="true"></div>
             <% } %>
           </div>
         </div>
