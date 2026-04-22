@@ -369,7 +369,7 @@ const categoryColors = {
 // setting their own `faicon`/`faiconStyle`) and rendered next to the filter
 // checkboxes so filter and timeline icons match.
 const categoryIcons = {
-  'training': { faicon: 'graduation-cap', faiconStyle: 'solid' },
+  'training': { faicon: 'microchip', faiconStyle: 'solid' },
   'editing and reverting': { faicon: 'pen-to-square', faiconStyle: 'solid' },
   'strategy and futurism': { faicon: 'compass', faiconStyle: 'solid' },
   'readership': { faicon: 'book-open-reader', faiconStyle: 'solid' },
