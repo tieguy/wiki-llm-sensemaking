@@ -166,6 +166,10 @@ const entries = [
         href: 'https://datareportal.com/reports/digital-2025-exploring-trends-in-wikipedia-traffic',
         linkText: 'DataReportal — "Digital 2025: exploring trends in Wikipedia traffic"',
       },
+      {
+        href: 'https://futurism.com/survey-chatgpt-overtaken-wikipedia',
+        linkText: 'Futurism — "Terrifying Survey Claims ChatGPT Has Overtaken Wikipedia" (citing Bloomberg)',
+      },
     ],
   },
 
