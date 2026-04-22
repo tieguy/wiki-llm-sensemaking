@@ -67,8 +67,27 @@ footer.page-footer
 		-webkit-margin-after: 0
 
 		li
-			display: inline
+			display: inline-block
 			padding-right: 20px
+
+		label
+			display: inline-flex
+			align-items: center
+			gap: 6px
+
+.filter-icon
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	width: 20px
+	height: 20px
+	border-radius: 50%
+	vertical-align: middle
+
+	i
+		color: $timeline-icon-color
+		font-size: 11px
+		line-height: 1
 
 .timeline
 	position: relative
@@ -210,7 +229,8 @@ footer.page-footer
 		font-style: italic
 
 /* ICON COLORS */
-.timeline-icon
+.timeline-icon,
+.filter-icon
 	@each $name, $color in $icon-colors
 		&.#{$name}
 			background-color: $color
@@ -297,6 +317,7 @@ footer.page-footer
 	.timeline-description,
 	.timeline-filter,
 	.timeline-icon i,
+	.filter-icon i,
 	.attribution,
 	.etc
 		color: $dark-main-color
@@ -321,7 +342,8 @@ footer.page-footer
 	.timeline-icon
 		border-color: $dark-timeline-line-color
 
-	.timeline-icon
+	.timeline-icon,
+	.filter-icon
 		@each $name, $color in $icon-colors
 			&.#{$name}
 				background-color: darken($color, 20%)

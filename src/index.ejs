@@ -26,8 +26,15 @@
             </li>
             <% content.filters.forEach(function(filter){ %>
             <li>
-              <input type="checkbox" name="filter" id="<%= filter %>" checked />
-              <label for="<%= filter %>"><%- utilities.sentenceCase(filter) %> </label>
+              <input type="checkbox" name="filter" id="<%= filter.name %>" checked />
+              <label for="<%= filter.name %>">
+                <span class="filter-icon <%- filter.color || 'grey' %>">
+                  <% if (filter.faicon) { %>
+                  <i class="fa-<%= filter.faiconStyle || 'solid' %> fa-<%= filter.faicon %>" aria-hidden="true"></i>
+                  <% } %>
+                </span>
+                <%- utilities.sentenceCase(filter.name) %>
+              </label>
             </li>
             <% }); %>
           </ul>
