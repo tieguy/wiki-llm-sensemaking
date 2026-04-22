@@ -372,6 +372,58 @@ const entries = [
   },
 ];
 
+// Per-year factoids displayed in the year banners that interrupt the
+// timeline rail. Each factoid is either a plain HTML string (rendered
+// as-is inside an <li>) or a structured object with { label, value,
+// href } — the structured form renders as a small-caps label above a
+// large value, optionally wrapped in a link.
+//
+// The convention here is that a year's banner summarizes the *previous*
+// calendar year. The Similarweb ranks below are for the preceding
+// December, sourced from the revision of Wikipedia's "List of
+// most-visited websites" that was live shortly after that December.
+// (Rankings before 2022 are omitted because Similarweb changed
+// methodology, breaking continuity.)
+const yearFactoids = {
+  2020: [],
+  2021: [],
+  2022: [
+    {
+      label: 'Similarweb global rank, Dec 2021',
+      value: '#7',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1068112107',
+    },
+  ],
+  2023: [
+    {
+      label: 'Similarweb global rank, Dec 2022',
+      value: '#7',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1132768096',
+    },
+  ],
+  2024: [
+    {
+      label: 'Similarweb global rank, Dec 2023',
+      value: '#7',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1199395761',
+    },
+  ],
+  2025: [
+    {
+      label: 'Similarweb global rank, Dec 2024',
+      value: '#7',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1268360156',
+    },
+  ],
+  2026: [
+    {
+      label: 'Similarweb global rank, Dec 2025',
+      value: '#9',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1332542122',
+    },
+  ],
+};
+
 // Page details
 const pageTitle = 'Wikimedia and LLM Timeline';
 const pageDescription =
@@ -434,16 +486,45 @@ const addCategoriesStringsToEntries = (entries) => {
         }
       }
     }
+    const dateStr = entry.datetime || entry.date;
+    if (dateStr) {
+      entry.year = String(dateStr).slice(0, 4);
+    }
   }
   return entries;
 };
+
+const sortEntriesByDate = (entries) =>
+  entries.slice().sort((a, b) => {
+    const da = new Date(a.datetime || a.date).getTime();
+    const db = new Date(b.datetime || b.date).getTime();
+    return da - db;
+  });
+
+const buildYearBanners = (entries, factoids) => {
+  const seen = new Set();
+  const banners = [];
+  for (const entry of entries) {
+    if (entry.year && !seen.has(entry.year)) {
+      seen.add(entry.year);
+      banners.push({
+        year: entry.year,
+        factoids: (factoids && factoids[entry.year]) || [],
+      });
+    }
+  }
+  return banners;
+};
+
+const sortedEntries = addCategoriesStringsToEntries(sortEntriesByDate(entries));
 
 module.exports = {
   header,
   footer,
   showMirrorLinks,
-  entries: addCategoriesStringsToEntries(entries),
+  entries: sortedEntries,
   filters: getFilters(entries),
+  yearBanners: buildYearBanners(sortedEntries, yearFactoids),
   head: {
     title: pageTitle,
     description: pageDescription,
