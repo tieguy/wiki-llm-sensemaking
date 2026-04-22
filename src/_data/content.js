@@ -152,6 +152,28 @@ const entries = [
   },
 
   {
+    id: 'chatgpt-surpasses-wikipedia-monthly-visits',
+    title: 'ChatGPT.com monthly visits surpass Wikipedia.org',
+    datetime: '2025-03-31',
+    categories: ['readership'],
+    body: 'ChatGPT.com exceeds 4 billion monthly visits for the first time (per Similarweb). Average daily visits to Wikipedia fall to roughly 4 billion monthly (per DataReportal). Bloomberg subsequently confirms (in May) that ChatGPT had surpassed Wikipedia in monthly visits.',
+    links: [
+      {
+        href: 'https://x.com/Similarweb/status/1906671477962703201',
+        linkText: 'Similarweb (X), April 1, 2025: ChatGPT surpasses 4 billion monthly visits',
+      },
+      {
+        href: 'https://datareportal.com/reports/digital-2025-exploring-trends-in-wikipedia-traffic',
+        linkText: 'DataReportal — "Digital 2025: exploring trends in Wikipedia traffic"',
+      },
+      {
+        href: 'https://futurism.com/survey-chatgpt-overtaken-wikipedia',
+        linkText: 'Futurism — "Terrifying Survey Claims ChatGPT Has Overtaken Wikipedia" (citing Bloomberg)',
+      },
+    ],
+  },
+
+  {
     id: 'wmf-crawler-impact-post',
     title: 'Wikimedia Foundation reports 50% multimedia bandwidth increase from AI scraper bots',
     datetime: '2025-04-01',
