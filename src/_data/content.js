@@ -352,18 +352,39 @@ const entries = [
 
 // Per-year factoids displayed in the year banners that interrupt the
 // timeline rail. Each entry is an HTML string. Keep them short — the
-// banner is a glance, not a paragraph. Examples of things that could go
-// here: a sparkline of human pageviews, WMF's web-traffic ranking,
-// notable model releases of the year. Empty arrays render an empty
-// banner with just the year.
+// banner is a glance, not a paragraph. The convention here is that a
+// year's banner summarizes the *previous* calendar year, so a reader
+// encountering e.g. the 2024 banner sees context on how 2023 went.
+//
+// Similarweb global ranks below are the best snapshots I could confirm
+// via public sources; they are not year-end averages. Gaps marked TODO
+// need verification against a primary Similarweb source before use.
 const yearFactoids = {
   2020: [],
-  2021: [],
-  2022: [],
-  2023: [],
-  2024: [],
-  2025: [],
-  2026: [],
+  2021: [
+    '<strong>Wikipedia.org Similarweb global rank, 2020:</strong> #5 (<a href="https://www.visualcapitalist.com/the-50-most-visited-websites-in-the-world/">Visual Capitalist</a>, Similarweb data Nov 2020)',
+  ],
+  2022: [
+    // TODO: verify 2021 Similarweb rank. DataReportal's Digital 2022
+    // report used Similarweb full-year 2021 data; rank not confirmed.
+    // https://datareportal.com/reports/digital-2022-worlds-top-websites
+  ],
+  2023: [
+    // TODO: verify 2022 Similarweb rank.
+    // https://datareportal.com/reports/digital-2023-global-overview-report
+  ],
+  2024: [
+    // TODO: verify 2023 Similarweb rank. Coverage of the March 2023
+    // snapshot of the Wikipedia "List of most-visited websites" article
+    // reports #6 per Similarweb, but this is a Q1 2023 snapshot, not a
+    // 2023 year-end figure.
+  ],
+  2025: [
+    '<strong>Wikipedia.org Similarweb global rank, 2024:</strong> #7 (Similarweb, Aug 2024 data)',
+  ],
+  2026: [
+    '<strong>Wikipedia.org Similarweb global rank, 2025:</strong> #8 (Similarweb, 2025 data)',
+  ],
 };
 
 // Page details
