@@ -119,10 +119,12 @@ footer.page-footer
 	width: 100vw
 	left: 50%
 	margin-left: -50vw
+	background-color: $filterbar-background
 	border-top: 1px solid $timeline-line-color
+	border-bottom: 1px solid $timeline-line-color
 	margin-top: 40px
-	margin-bottom: 20px
-	padding: 14px 0 16px 0
+	margin-bottom: 24px
+	padding: 18px 0
 	z-index: 3
 
 	&[aria-hidden="true"]
@@ -130,7 +132,6 @@ footer.page-footer
 
 .timeline > .year-banner:first-child
 	margin-top: 0
-	border-top: none
 
 .year-banner-inner
 	box-sizing: border-box
@@ -139,28 +140,35 @@ footer.page-footer
 	margin: 0 auto
 	padding: 0 10px
 	display: flex
-	align-items: baseline
-	gap: 32px
+	align-items: center
+	gap: 28px
 	flex-wrap: wrap
 
 .year-banner-year
 	font-family: 'Roboto Slab', serif
-	font-size: 2rem
+	font-size: 2.25rem
 	line-height: 1
-	font-weight: 500
-	color: $timestamp-color
-	letter-spacing: 0.02em
+	font-weight: 600
+	color: $header-footer-background
+	letter-spacing: 0.01em
 	flex: 0 0 auto
 
+.year-banner-chart
+	flex: 0 1 auto
+	display: flex
+	align-items: center
+	line-height: 0
+
 .year-banner-factoids
-	flex: 1 1 0
+	flex: 1 1 auto
 	list-style: none
 	padding: 0
-	margin: 0
+	margin: 0 0 0 auto
 	display: flex
+	justify-content: flex-end
 	gap: 32px
 	flex-wrap: wrap
-	align-items: baseline
+	align-items: center
 
 .year-factoid
 	flex: 0 1 auto
@@ -195,6 +203,22 @@ a.year-factoid-value
 	&:focus
 		text-decoration: none
 		border-bottom-color: currentColor
+
+.traffic-sparkline
+	display: block
+	overflow: visible
+
+	.traffic-sparkline-line
+		stroke: $timeline-line-color
+		stroke-width: 1
+		stroke-linecap: round
+		stroke-linejoin: round
+
+	.traffic-sparkline-highlight
+		stroke: $header-footer-background
+		stroke-width: 2
+		stroke-linecap: round
+		stroke-linejoin: round
 
 .timeline-icon
 	position: absolute
@@ -359,6 +383,14 @@ a.year-factoid-value
 	.year-banner-year
 		font-size: 1.5rem
 
+	.year-banner-factoids
+		margin-left: 0
+		justify-content: flex-start
+
+	.traffic-sparkline
+		width: 100%
+		height: 40px
+
 // DARK MODE
 @media (prefers-color-scheme: dark)
 	body
@@ -407,10 +439,12 @@ a.year-factoid-value
 				background-color: darken($color, 20%)
 
 	.year-banner
+		background-color: $dark-filterbar-background
 		border-top-color: $dark-timeline-line-color
+		border-bottom-color: $dark-timeline-line-color
 
 	.year-banner-year
-		color: $dark-main-color
+		color: $dark-link-color
 
 	.year-factoid
 		color: $dark-main-color
@@ -423,6 +457,13 @@ a.year-factoid-value
 
 	a.year-factoid-value
 		border-bottom-color: $dark-timeline-line-color
+
+	.traffic-sparkline
+		.traffic-sparkline-line
+			stroke: $dark-timeline-line-color
+
+		.traffic-sparkline-highlight
+			stroke: $dark-link-color
 
 	/* Arrows */
 	@media only screen and (min-width: 415px)

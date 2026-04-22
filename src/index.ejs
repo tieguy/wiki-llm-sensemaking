@@ -48,6 +48,9 @@
         <div class="year-banner" data-year="<%= banner.year %>" aria-hidden="false">
           <div class="year-banner-inner">
             <div class="year-banner-year"><%= banner.year %></div>
+            <% if (traffic && traffic.available) { %>
+            <div class="year-banner-chart"><%- utilities.renderTrafficSparkline(traffic, banner.year) %></div>
+            <% } %>
             <% if (banner.factoids && banner.factoids.length) { %>
             <ul class="year-banner-factoids">
               <% banner.factoids.forEach(function(f){ %>
