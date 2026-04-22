@@ -114,6 +114,62 @@ footer.page-footer
 	&.first
 		margin-top: 10px
 
+.year-banner
+	position: relative
+	width: 100vw
+	left: 50%
+	margin-left: -50vw
+	background-color: $filterbar-background
+	border-top: 1px solid $timeline-line-color
+	border-bottom: 1px solid $timeline-line-color
+	margin-top: 50px
+	margin-bottom: 30px
+	padding: 24px 0
+	z-index: 3
+
+	&[aria-hidden="true"]
+		display: none
+
+.timeline > .year-banner:first-child
+	margin-top: 0
+
+.year-banner-inner
+	box-sizing: border-box
+	width: 90%
+	max-width: 1400px
+	margin: 0 auto
+	padding: 0 10px
+	display: flex
+	align-items: center
+	gap: 32px
+	flex-wrap: wrap
+
+.year-banner-year
+	font-family: 'Roboto Slab', serif
+	font-size: 3rem
+	line-height: 1
+	font-weight: 700
+	color: $header-footer-background
+	flex: 0 0 auto
+
+.year-banner-factoids
+	flex: 1 1 0
+	list-style: none
+	padding: 0
+	margin: 0
+	min-height: 1.5em
+
+	&:not(.year-banner-factoids-empty)
+		display: flex
+		gap: 24px
+		flex-wrap: wrap
+
+.year-factoid
+	flex: 0 1 auto
+	font-size: 0.9rem
+	line-height: 130%
+	color: $main-link-color
+
 .timeline-icon
 	position: absolute
 	left: 22px
@@ -269,6 +325,14 @@ footer.page-footer
 		margin-left: 50px
 		width: calc(100% - 50px)
 
+	.year-banner-inner
+		flex-direction: column
+		align-items: flex-start
+		gap: 12px
+
+	.year-banner-year
+		font-size: 2.25rem
+
 // DARK MODE
 @media (prefers-color-scheme: dark)
 	body
@@ -315,6 +379,17 @@ footer.page-footer
 		@each $name, $color in $icon-colors
 			&.#{$name}
 				background-color: darken($color, 20%)
+
+	.year-banner
+		background-color: $dark-filterbar-background
+		border-top-color: $dark-timeline-line-color
+		border-bottom-color: $dark-timeline-line-color
+
+	.year-banner-year
+		color: $dark-link-color
+
+	.year-factoid
+		color: $dark-main-color
 
 	/* Arrows */
 	@media only screen and (min-width: 415px)

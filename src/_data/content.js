@@ -350,6 +350,22 @@ const entries = [
   },
 ];
 
+// Per-year factoids displayed in the year banners that interrupt the
+// timeline rail. Each entry is an HTML string. Keep them short — the
+// banner is a glance, not a paragraph. Examples of things that could go
+// here: a sparkline of human pageviews, WMF's web-traffic ranking,
+// notable model releases of the year. Empty arrays render an empty
+// banner with just the year.
+const yearFactoids = {
+  2020: [],
+  2021: [],
+  2022: [],
+  2023: [],
+  2024: [],
+  2025: [],
+  2026: [],
+};
+
 // Page details
 const pageTitle = 'Wikimedia and LLM Timeline';
 const pageDescription =
@@ -412,16 +428,45 @@ const addCategoriesStringsToEntries = (entries) => {
         }
       }
     }
+    const dateStr = entry.datetime || entry.date;
+    if (dateStr) {
+      entry.year = String(dateStr).slice(0, 4);
+    }
   }
   return entries;
 };
+
+const sortEntriesByDate = (entries) =>
+  entries.slice().sort((a, b) => {
+    const da = new Date(a.datetime || a.date).getTime();
+    const db = new Date(b.datetime || b.date).getTime();
+    return da - db;
+  });
+
+const buildYearBanners = (entries, factoids) => {
+  const seen = new Set();
+  const banners = [];
+  for (const entry of entries) {
+    if (entry.year && !seen.has(entry.year)) {
+      seen.add(entry.year);
+      banners.push({
+        year: entry.year,
+        factoids: (factoids && factoids[entry.year]) || [],
+      });
+    }
+  }
+  return banners;
+};
+
+const sortedEntries = addCategoriesStringsToEntries(sortEntriesByDate(entries));
 
 module.exports = {
   header,
   footer,
   showMirrorLinks,
-  entries: addCategoriesStringsToEntries(entries),
+  entries: sortedEntries,
   filters: getFilters(entries),
+  yearBanners: buildYearBanners(sortedEntries, yearFactoids),
   head: {
     title: pageTitle,
     description: pageDescription,
