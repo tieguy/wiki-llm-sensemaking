@@ -100,28 +100,21 @@ footer.page-footer
 		content: ''
 		position: absolute
 		top: 0
-		left: 50.2%
+		left: 20px
 		height: 100%
 		width: 4px
 		background: $timeline-line-color
 
 .timeline-entry
 	position: relative
-	margin-top: -75px
+	margin-top: 25px
 
 	&.first
 		margin-top: 10px
 
-	&.short
-		margin-top: -50px
-
-	&.odd
-		.timeline-description
-			margin-left: 55%
-
 .timeline-icon
 	position: absolute
-	left: 50%
+	left: 22px
 	width: 40px
 	height: 40px
 	margin-left: -20px
@@ -140,7 +133,8 @@ footer.page-footer
 .timeline-description
 	box-sizing: border-box
 	position: relative
-	width: 45%
+	margin-left: 70px
+	width: calc(100% - 70px)
 	background-color: $card-background
 	padding: 20px
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3)
@@ -236,16 +230,6 @@ footer.page-footer
 			background-color: $color
 
 /* RESPONSIVENESS */
-@media only screen and (min-width: 769px)
-	.timeline-entry.even .timeline-description:after
-		left: 100%
-		border-left-color: $card-background
-
-@media only screen and (max-width: 768px) and (min-width: 415px)
-	.timeline-entry.even .timeline-description:after
-		right: 100%
-		border-right-color: $card-background
-
 @media only screen and (min-width: 415px)
 	.timeline-description:after
 		top: 20px
@@ -258,26 +242,8 @@ footer.page-footer
 		border-width: 10px
 		margin-top: -10px
 		z-index: 100
-
-	.timeline-entry.odd .timeline-description:after
 		right: 100%
 		border-right-color: $card-background
-
-@media only screen and (max-width: 768px)
-	.timeline::before,
-	.timeline-icon
-		left: 0
-
-	.timeline-entry,
-	.timeline-entry.short
-		margin-top: 25px
-
-	.timeline-entry.odd .timeline-description,
-	.timeline-entry.even .timeline-description
-		margin-left: 50px
-
-	.timeline-description
-		width: 90%
 
 @media only screen and (max-width: 414px)
 	.timeline-description img,
@@ -297,9 +263,9 @@ footer.page-footer
 			font-size: 15px
 			line-height: 30px
 
-	.timeline-entry.odd .timeline-description,
-	.timeline-entry.even .timeline-description
-		margin-left: 35px
+	.timeline-description
+		margin-left: 50px
+		width: calc(100% - 50px)
 
 // DARK MODE
 @media (prefers-color-scheme: dark)
@@ -349,41 +315,11 @@ footer.page-footer
 				background-color: darken($color, 20%)
 
 	/* Arrows */
-	.no-js .timeline-entry .timeline-description::after
-		border-right-color: $dark-card-background
-
-	@media only screen and (min-width: 769px)
-		.timeline-entry.even .timeline-description::after
-			border-left-color: $dark-card-background
-
-	@media only screen and (max-width: 768px) and (min-width: 415px)
-		.timeline-entry.even .timeline-description::after
-			border-right-color: $dark-card-background
-
 	@media only screen and (min-width: 415px)
-		.timeline-entry.odd .timeline-description::after
+		.timeline-description::after
 			border-right-color: $dark-card-background
 
 // NO JS FALLBACK
 .no-js
-	.timeline::before, .timeline-icon
-		left: 0
-
 	.timeline-filter-wrapper
 		display: none
-
-	.timeline-entry
-		margin-top: 25
-
-		&.short
-			margin-top: 25
-
-		.timeline-description
-			margin-left: 50px
-
-			&:after
-				right: 100%
-				border-right-color: $card-background
-
-	.timeline-description
-		width: 90%
