@@ -7,6 +7,8 @@
     "serve": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
     "fetch-traffic": "node scripts/fetch-traffic.js",
+    "fetch-signpost": "node scripts/fetch-signpost.js",
+    "review-signpost": "node scripts/review-signpost.js",
     "prettier": "prettier --write ."
   },
   "repository": {
