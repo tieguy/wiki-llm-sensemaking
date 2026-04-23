@@ -11,7 +11,8 @@
  * Or:    npm run fetch-traffic
  *
  * The range is 2020-01 through the most recently completed month.
- * traffic.json is gitignored; each contributor regenerates locally.
+ * traffic.json is checked in; regenerate and commit (roughly monthly)
+ * to refresh the sparkline on the deployed site.
  *
  * API docs:
  *   https://wikimedia.org/api/rest_v1/#/Pageviews%20data
