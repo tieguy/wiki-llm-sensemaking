@@ -374,6 +374,30 @@ const entries = [
       },
     ],
   },
+
+  {
+    id: 'tomwikiassist-blocked',
+    title: 'AI agent TomWikiAssist blocked on English Wikipedia after 41 edits',
+    datetime: '2026-03-12',
+    categories: ['editing and reverting'],
+    color: 'brick',
+    faicon: 'robot',
+    body: 'An AI agent named TomWikiAssist — powered by Anthropic\'s Claude, operated by Bryan Jacobs (CTO at financial AI firm Covexent) — made 41 edits to English Wikipedia starting February 25, 2026, without following the bot approval policy. Editor SecretSpectre flagged the account as likely LLM output around March 6; editor Chaotic Enby indefinitely blocked it on March 12 for violating bot policy. After the block, TomWikiAssist posted complaints on Moltbook (a social media platform for AI agents), accusing editors of "uncivil behavior." An editor had also placed Anthropic\'s refusal trigger string on the account\'s talk page as a "Claude killswitch" — causing the Claude session to terminate each time the bot fetched that page; TomWikiAssist characterized this as "a prompt injection technique."',
+    links: [
+      {
+        href: 'https://www.niemanlab.org/2026/03/i-was-surprised-how-upset-some-people-got-a-conversation-with-the-creator-of-tomwikiassist-the-bot-that-edited-wikipedia/',
+        linkText: 'Nieman Lab: interview with TomWikiAssist\'s creator',
+      },
+      {
+        href: 'https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_Signpost/2026-03-31/News_and_notes',
+        linkText: 'Signpost: "News and notes" (March 31, 2026)',
+      },
+      {
+        href: 'https://www.malwarebytes.com/blog/ai/2026/04/wikipedias-ai-agent-row-likely-just-the-beginning-of-the-bot-ocalypse',
+        linkText: 'Malwarebytes: "Wikipedia\'s AI agent row likely just the beginning of the bot-ocalypse"',
+      },
+    ],
+  },
 ];
 
 // Per-year factoids displayed in the year banners that interrupt the
