@@ -288,6 +288,10 @@ const entries = [
         href: 'https://meta.wikimedia.org/wiki/User:Schiste/what-now',
         linkText: 'Full essay: User:Schiste/what-now on Meta-Wiki',
       },
+      {
+        href: 'https://spectrum.ieee.org/wikipedia-at-25',
+        linkText: 'Another essay on Wikimedia innovation in the LLM era by a former WMF Board member and long term editor (Dariusz Jemielniak)',
+      },
     ],
   },
 
