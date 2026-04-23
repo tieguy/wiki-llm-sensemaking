@@ -56,7 +56,7 @@ footer.page-footer
 
 .timeline-filter
 	width: 90%
-	max-width: 1600px
+	max-width: 900px
 	margin: 0px auto
 
 	ul
@@ -67,13 +67,34 @@ footer.page-footer
 		-webkit-margin-after: 0
 
 		li
-			display: inline
+			display: inline-flex
+			align-items: center
+			gap: 6px
 			padding-right: 20px
+
+		label
+			display: inline-flex
+			align-items: center
+			gap: 6px
+
+.filter-icon
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	width: 20px
+	height: 20px
+	border-radius: 50%
+	vertical-align: middle
+
+	i
+		color: $timeline-icon-color
+		font-size: 11px
+		line-height: 1
 
 .timeline
 	position: relative
 	width: 90%
-	max-width: 1600px
+	max-width: 900px
 	margin: 0px auto
 	padding: 20px 0 100px 0
 
@@ -81,28 +102,127 @@ footer.page-footer
 		content: ''
 		position: absolute
 		top: 0
-		left: 50.2%
+		left: 20px
 		height: 100%
 		width: 4px
 		background: $timeline-line-color
 
 .timeline-entry
 	position: relative
-	margin-top: -75px
+	margin-top: 25px
 
 	&.first
 		margin-top: 10px
 
-	&.short
-		margin-top: -50px
+.year-banner
+	position: relative
+	width: 100vw
+	left: 50%
+	margin-left: -50vw
+	background-color: $filterbar-background
+	border-top: 1px solid $timeline-line-color
+	border-bottom: 1px solid $timeline-line-color
+	margin-top: 40px
+	margin-bottom: 24px
+	padding: 18px 0
+	z-index: 3
 
-	&.odd
-		.timeline-description
-			margin-left: 55%
+	&[aria-hidden="true"]
+		display: none
+
+.timeline > .year-banner:first-child
+	margin-top: 0
+
+.year-banner-inner
+	box-sizing: border-box
+	width: 90%
+	max-width: 1400px
+	margin: 0 auto
+	padding: 0 10px
+	display: flex
+	align-items: center
+	gap: 28px
+	flex-wrap: wrap
+
+.year-banner-year
+	font-family: 'Roboto Slab', serif
+	font-size: 2.25rem
+	line-height: 1
+	font-weight: 600
+	color: $header-footer-background
+	letter-spacing: 0.01em
+	flex: 0 0 auto
+
+.year-banner-chart
+	flex: 0 1 auto
+	display: flex
+	align-items: center
+	line-height: 0
+
+.year-banner-factoids
+	flex: 1 1 auto
+	list-style: none
+	padding: 0
+	margin: 0 0 0 auto
+	display: flex
+	justify-content: flex-end
+	gap: 32px
+	flex-wrap: wrap
+	align-items: center
+
+.year-factoid
+	flex: 0 1 auto
+	font-size: 0.9rem
+	line-height: 130%
+	color: $main-link-color
+
+.year-factoid-stat
+	display: inline-flex
+	align-items: baseline
+	gap: 10px
+
+.year-factoid-label
+	font-size: 0.72rem
+	text-transform: uppercase
+	letter-spacing: 0.06em
+	color: $timestamp-color
+	white-space: nowrap
+
+.year-factoid-value
+	font-family: 'Roboto Slab', serif
+	font-size: 1.5rem
+	line-height: 1
+	font-weight: 500
+	color: $header-footer-background
+
+a.year-factoid-value
+	text-decoration: none
+	border-bottom: 1px dotted $timeline-line-color
+
+	&:hover,
+	&:focus
+		text-decoration: none
+		border-bottom-color: currentColor
+
+.traffic-sparkline
+	display: block
+	overflow: visible
+
+	.traffic-sparkline-line
+		stroke: $timeline-line-color
+		stroke-width: 1
+		stroke-linecap: round
+		stroke-linejoin: round
+
+	.traffic-sparkline-highlight
+		stroke: $header-footer-background
+		stroke-width: 2
+		stroke-linecap: round
+		stroke-linejoin: round
 
 .timeline-icon
 	position: absolute
-	left: 50%
+	left: 22px
 	width: 40px
 	height: 40px
 	margin-left: -20px
@@ -121,7 +241,8 @@ footer.page-footer
 .timeline-description
 	box-sizing: border-box
 	position: relative
-	width: 45%
+	margin-left: 70px
+	width: calc(100% - 70px)
 	background-color: $card-background
 	padding: 20px
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3)
@@ -210,22 +331,13 @@ footer.page-footer
 		font-style: italic
 
 /* ICON COLORS */
-.timeline-icon
+.timeline-icon,
+.filter-icon
 	@each $name, $color in $icon-colors
 		&.#{$name}
 			background-color: $color
 
 /* RESPONSIVENESS */
-@media only screen and (min-width: 769px)
-	.timeline-entry.even .timeline-description:after
-		left: 100%
-		border-left-color: $card-background
-
-@media only screen and (max-width: 768px) and (min-width: 415px)
-	.timeline-entry.even .timeline-description:after
-		right: 100%
-		border-right-color: $card-background
-
 @media only screen and (min-width: 415px)
 	.timeline-description:after
 		top: 20px
@@ -238,26 +350,8 @@ footer.page-footer
 		border-width: 10px
 		margin-top: -10px
 		z-index: 100
-
-	.timeline-entry.odd .timeline-description:after
 		right: 100%
 		border-right-color: $card-background
-
-@media only screen and (max-width: 768px)
-	.timeline::before,
-	.timeline-icon
-		left: 0
-
-	.timeline-entry,
-	.timeline-entry.short
-		margin-top: 25px
-
-	.timeline-entry.odd .timeline-description,
-	.timeline-entry.even .timeline-description
-		margin-left: 50px
-
-	.timeline-description
-		width: 90%
 
 @media only screen and (max-width: 414px)
 	.timeline-description img,
@@ -277,9 +371,25 @@ footer.page-footer
 			font-size: 15px
 			line-height: 30px
 
-	.timeline-entry.odd .timeline-description,
-	.timeline-entry.even .timeline-description
-		margin-left: 35px
+	.timeline-description
+		margin-left: 50px
+		width: calc(100% - 50px)
+
+	.year-banner-inner
+		flex-direction: column
+		align-items: flex-start
+		gap: 10px
+
+	.year-banner-year
+		font-size: 1.5rem
+
+	.year-banner-factoids
+		margin-left: 0
+		justify-content: flex-start
+
+	.traffic-sparkline
+		width: 100%
+		height: 40px
 
 // DARK MODE
 @media (prefers-color-scheme: dark)
@@ -297,6 +407,7 @@ footer.page-footer
 	.timeline-description,
 	.timeline-filter,
 	.timeline-icon i,
+	.filter-icon i,
 	.attribution,
 	.etc
 		color: $dark-main-color
@@ -321,47 +432,45 @@ footer.page-footer
 	.timeline-icon
 		border-color: $dark-timeline-line-color
 
-	.timeline-icon
+	.timeline-icon,
+	.filter-icon
 		@each $name, $color in $icon-colors
 			&.#{$name}
 				background-color: darken($color, 20%)
 
+	.year-banner
+		background-color: $dark-filterbar-background
+		border-top-color: $dark-timeline-line-color
+		border-bottom-color: $dark-timeline-line-color
+
+	.year-banner-year
+		color: $dark-link-color
+
+	.year-factoid
+		color: $dark-main-color
+
+	.year-factoid-label
+		color: $dark-main-color
+
+	.year-factoid-value
+		color: $dark-link-color
+
+	a.year-factoid-value
+		border-bottom-color: $dark-timeline-line-color
+
+	.traffic-sparkline
+		.traffic-sparkline-line
+			stroke: $dark-timeline-line-color
+
+		.traffic-sparkline-highlight
+			stroke: $dark-link-color
+
 	/* Arrows */
-	.no-js .timeline-entry .timeline-description::after
-		border-right-color: $dark-card-background
-
-	@media only screen and (min-width: 769px)
-		.timeline-entry.even .timeline-description::after
-			border-left-color: $dark-card-background
-
-	@media only screen and (max-width: 768px) and (min-width: 415px)
-		.timeline-entry.even .timeline-description::after
-			border-right-color: $dark-card-background
-
 	@media only screen and (min-width: 415px)
-		.timeline-entry.odd .timeline-description::after
+		.timeline-description::after
 			border-right-color: $dark-card-background
 
 // NO JS FALLBACK
 .no-js
-	.timeline::before, .timeline-icon
-		left: 0
-
 	.timeline-filter-wrapper
 		display: none
-
-	.timeline-entry
-		margin-top: 25
-
-		&.short
-			margin-top: 25
-
-		.timeline-description
-			margin-left: 50px
-
-			&:after
-				right: 100%
-				border-right-color: $card-background
-
-	.timeline-description
-		width: 90%

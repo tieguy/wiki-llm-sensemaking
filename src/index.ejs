@@ -26,18 +26,57 @@
             </li>
             <% content.filters.forEach(function(filter){ %>
             <li>
-              <input type="checkbox" name="filter" id="<%= filter %>" checked />
-              <label for="<%= filter %>"><%- utilities.sentenceCase(filter) %> </label>
+              <input type="checkbox" name="filter" id="<%= filter.name %>" checked />
+              <label for="<%= filter.name %>">
+                <span class="filter-icon <%- filter.color || 'grey' %>">
+                  <% if (filter.faicon) { %>
+                  <i class="fa-<%= filter.faiconStyle || 'solid' %> fa-<%= filter.faicon %>" aria-hidden="true"></i>
+                  <% } %>
+                </span>
+                <%- utilities.sentenceCase(filter.name) %>
+              </label>
             </li>
             <% }); %>
           </ul>
         </header>
       </div>
       <article class="timeline">
+        <% let lastBannerYear = null; %>
         <% content.entries.forEach(function(entry){ %>
+        <% if (entry.year && entry.year !== lastBannerYear) { %>
+        <% const banner = (content.yearBanners || []).find(function(b){ return b.year === entry.year; }) || { year: entry.year, factoids: [] }; %>
+        <div class="year-banner" data-year="<%= banner.year %>" aria-hidden="false">
+          <div class="year-banner-inner">
+            <div class="year-banner-year"><%= banner.year %></div>
+            <% if (traffic && traffic.available) { %>
+            <div class="year-banner-chart"><%- utilities.renderTrafficSparkline(traffic, banner.year) %></div>
+            <% } %>
+            <% if (banner.factoids && banner.factoids.length) { %>
+            <ul class="year-banner-factoids">
+              <% banner.factoids.forEach(function(f){ %>
+              <% if (typeof f === 'string') { %>
+              <li class="year-factoid"><%- f %></li>
+              <% } else { %>
+              <li class="year-factoid year-factoid-stat">
+                <span class="year-factoid-label"><%= f.label %></span>
+                <% if (f.href) { %>
+                <a class="year-factoid-value" href="<%= f.href %>"><%- f.value %></a>
+                <% } else { %>
+                <span class="year-factoid-value"><%- f.value %></span>
+                <% } %>
+              </li>
+              <% } %>
+              <% }) %>
+            </ul>
+            <% } %>
+          </div>
+        </div>
+        <% lastBannerYear = entry.year; %>
+        <% } %>
         <div
           class="timeline-entry"
           data-category="<%= entry.categoriesString %>"
+          data-year="<%= entry.year %>"
           aria-hidden="false"
         >
           <div class="timeline-icon <%- entry.color || 'grey' %>" title="<%= entry.faicon %>">

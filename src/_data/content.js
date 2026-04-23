@@ -6,11 +6,9 @@ const footer =
 const entries = [
   {
     id: 'gpt3-paper-wikipedia-training',
-    title: 'GPT-3 paper discloses Wikipedia as training data',
+    title: 'OpenAI GPT-3 whitepaper discloses Wikipedia as training data',
     datetime: '2020-05-28',
     categories: ['training'],
-
-    faicon: 'robot',
     body: 'OpenAI researchers publish "Language Models are Few-Shot Learners" on arXiv, describing the training dataset for GPT-3. It lists English Wikipedia as ~3% of the training mix by token count, and says it is weighted at 3x relative to its raw token share.',
     links: [
       {
@@ -25,8 +23,6 @@ const entries = [
     title: 'EleutherAI releases The Pile, a source-available LLM training dataset including Wikipedia',
     datetime: '2020-12-31',
     categories: ['training'],
-
-    faicon: 'database',
     body: 'EleutherAI publicly releases The Pile, an 825 GiB text-available training dataset for large language models composed of 22 component datasets. English Wikipedia is one of the named components.',
     links: [
       {
@@ -41,13 +37,29 @@ const entries = [
   },
 
   {
+    id: 'doe-v-github-filing',
+    title: 'Doe v. GitHub class action filed in part based on disclosures in OpenAI whitepapers',
+    datetime: '2022-11-03',
+    categories: ['training'],
+    body: 'The first major class-action lawsuit against GitHub, Microsoft, and OpenAI uses OpenAI’s technical whitepapers as evidence that OpenAI trained on GitHub-hosted source code, and violated open-source licenses.',
+    links: [
+      {
+        href: 'https://githubcopilotlitigation.com/2022/11/03/github-copilot-litigation/',
+        linkText: '"GitHub Copilot litigation" (Matthew Butterick Blog)',
+      },
+      {
+        href: 'https://arxiv.org/abs/2107.03374',
+        linkText: '"Evaluating Large Language Models Trained on Code" (OpenAI Codex Whitepaper)',
+      },
+    ],
+  },
+
+
+  {
     id: 'wikimedia-enterprise-announced',
     title: 'Wikimedia Enterprise announced',
     datetime: '2021-03-16',
     categories: ['scraping', 'strategy and futurism'],
-
-    faicon: 'wikipedia-w',
-    faiconStyle: 'brands',
     body: 'WMF announces plans for Wikimedia Enterprise, a paid commercial product for large-scale reusers of Wikimedia project content. The initiative arises from the Wikimedia 2030 Movement Strategy, which called for sustainable revenue from enterprise users.',
     links: [
       {
@@ -62,9 +74,6 @@ const entries = [
     title: 'Google announced as first paying Wikimedia Enterprise customer',
     datetime: '2022-06-21',
     categories: ['scraping'],
-
-    faicon: 'google',
-    faiconStyle: 'brands',
     body: 'Wikimedia Enterprise announces that Google is its first paying customer, with the Internet Archive receiving free access.',
     links: [
       {
@@ -76,11 +85,9 @@ const entries = [
 
   {
     id: 'gpt4-technical-report-no-training-data',
-    title: 'GPT-4 technical report declines to disclose training data',
+    title: 'OpenAI\'s GPT-4 whitepaper declines to disclose training data',
     datetime: '2023-03-15',
     categories: ['training'],
-
-    faicon: 'eye-slash',
     body: 'OpenAI publishes the GPT-4 Technical Report, explicitly declining to disclose details about training data, a marked departure from the GPT-3 paper\'s disclosure of Wikipedia as a named training source.',
     links: [
       {
@@ -95,9 +102,6 @@ const entries = [
     title: 'WikiProject AI Cleanup founded on English Wikipedia',
     datetime: '2023-12-04',
     categories: ['editing and reverting'],
-
-    faicon: 'wikipedia-w',
-    faiconStyle: 'brands',
     body: 'A group of English Wikipedia editors formally establishes WikiProject AI Cleanup.',
     links: [
       {
@@ -116,8 +120,6 @@ const entries = [
     title: 'AI2 releases OLMo and Dolma, acknowledging Wikipedia as training data',
     datetime: '2024-02-01',
     categories: ['training'],
-
-    faicon: 'flask',
     body: 'The Allen Institute for AI (AI2) releases OLMo, a fully open language model, alongside Dolma, its 3-trillion-token pretraining corpus. Dolma explicitly includes English Wikipedia and Wikibooks as named components. Unlike most LLM releases, OLMo ships with full training data, code, training logs, and hundreds of intermediate checkpoints under Apache 2.0.',
     links: [
       {
@@ -140,9 +142,6 @@ const entries = [
     title: 'Google launches AI Overviews in Search',
     datetime: '2024-05-14',
     categories: ['readership'],
-
-    faicon: 'google',
-    faiconStyle: 'brands',
     body: 'Google announces and begins rolling out AI Overviews — AI-generated summaries appearing at the top of search results — to all US users, rebranded from the earlier Search Generative Experience (SGE). The feature is powered by Google\'s Gemini LLM.',
     links: [
       {
@@ -153,13 +152,32 @@ const entries = [
   },
 
   {
+    id: 'chatgpt-surpasses-wikipedia-monthly-visits',
+    title: 'ChatGPT.com monthly visits surpass Wikipedia.org',
+    datetime: '2025-03-31',
+    categories: ['readership'],
+    body: 'ChatGPT.com exceeds 4 billion monthly visits for the first time (per Similarweb). Average daily visits to Wikipedia fall to roughly 4 billion monthly (per DataReportal). Bloomberg subsequently confirms (in May) that ChatGPT had surpassed Wikipedia in monthly visits.',
+    links: [
+      {
+        href: 'https://x.com/Similarweb/status/1906671477962703201',
+        linkText: 'Similarweb (X), April 1, 2025: ChatGPT surpasses 4 billion monthly visits',
+      },
+      {
+        href: 'https://datareportal.com/reports/digital-2025-exploring-trends-in-wikipedia-traffic',
+        linkText: 'DataReportal — "Digital 2025: exploring trends in Wikipedia traffic"',
+      },
+      {
+        href: 'https://futurism.com/survey-chatgpt-overtaken-wikipedia',
+        linkText: 'Futurism — "Terrifying Survey Claims ChatGPT Has Overtaken Wikipedia" (citing Bloomberg)',
+      },
+    ],
+  },
+
+  {
     id: 'wmf-crawler-impact-post',
     title: 'Wikimedia Foundation reports 50% multimedia bandwidth increase from AI scraper bots',
     datetime: '2025-04-01',
     categories: ['scraping'],
-
-    faicon: 'wikipedia-w',
-    faiconStyle: 'brands',
     body: 'WMF site reliability engineers publish a Diff post reporting that since January 2024, bandwidth for downloading multimedia content has grown 50%, driven by bots scraping Wikimedia Commons images for AI model training.',
     links: [
       {
@@ -174,9 +192,6 @@ const entries = [
     title: 'WMF publishes AI strategy for 2025–2028, centering editor human agency',
     datetime: '2025-04-29',
     categories: ['strategy and futurism'],
-
-    faicon: 'wikipedia-w',
-    faiconStyle: 'brands',
     body: 'Wikimedia Foundation staff Chris Albon (Director of Machine Learning) and Leila Zia (Head of Research) publish a strategy document on Meta-Wiki outlining WMF\'s intended approach to AI for 2025–2028. The document calls for AI uses that enhance the "human agency" of editors, including support for content creation, while framing WMF\'s role as ensuring AI tools serve rather than supplant volunteer contributors.',
     links: [
       {
@@ -191,8 +206,6 @@ const entries = [
     title: 'EleutherAI releases Common Pile v0.1, restricting training data to openly licensed text',
     datetime: '2025-06-06',
     categories: ['training'],
-
-    faicon: 'scale-balanced',
     body: 'EleutherAI and partners release the Common Pile v0.1, an 8 TB LLM training dataset comprising only public domain and openly licensed text from 30 sources — explicitly positioned as a successor to the original Pile, which had drawn criticism for including copyrighted material. Wikipedia content is among the openly licensed text sources included. The release is framed in part as a response to decreased transparency in industry training data practices following copyright litigation.',
     links: [
       {
@@ -215,9 +228,6 @@ const entries = [
     title: 'Creative Commons announces CC Signals, a preference framework for AI training data use',
     datetime: '2025-06-25',
     categories: ['training', 'scraping'],
-
-    faicon: 'creative-commons',
-    faiconStyle: 'brands',
     body: 'Creative Commons announces the public kickoff of CC Signals, described as "a new preference signals framework designed to increase reciprocity and sustain a creative commons in the age of AI." CC frames it as a response to a fork in the road between "data extraction and the erosion of openness" and a "walled-off internet."',
     links: [
       {
@@ -236,9 +246,6 @@ const entries = [
     title: 'Wikimedia Foundation calls on AI companies to stop scraping and use Wikimedia Enterprise',
     datetime: '2025-11-10',
     categories: ['scraping', 'readership'],
-
-    faicon: 'wikipedia-w',
-    faiconStyle: 'brands',
     body: 'The Wikimedia Foundation publishes a statement calling on AI developers to use Wikipedia content "responsibly" via two guidelines: provide attribution to human contributors, and access content through the paid Wikimedia Enterprise platform rather than scraping. The post reports an 8% year-over-year decline in human page views, and discloses that updated bot detection revealed that anomalously high traffic in May and June 2025 came from bots designed to evade detection.',
     links: [
       {
@@ -257,9 +264,6 @@ const entries = [
     title: 'English Wikipedia RfC on LLM guideline closes without promotion',
     datetime: '2026-01-07',
     categories: ['editing and reverting'],
-
-    faicon: 'wikipedia-w',
-    faiconStyle: 'brands',
     body: 'An English Wikipedia RfC on promoting a draft LLM guideline (WP:NEWLLM) to official status closes with only weak consensus. The closer encouraged further revision before a future discussion, and noted a three-way split in opinions',
     links: [
       {
@@ -274,8 +278,6 @@ const entries = [
     title: 'Former WMF board chair Henner publishes "what-now" essay warning of Wikipedia\'s irrelevance',
     datetime: '2026-01-09',
     categories: ['readership', 'strategy and futurism'],
-
-    faicon: 'circle-exclamation',
     body: 'Christophe Henner, former chair of the WMF Board, emails the Wikimedia-l mailing list sharing a structured essay on Wikipedia\'s trajectory. The email sparked a sustained debate on the list about the severity of the decline.',
     links: [
       {
@@ -286,6 +288,10 @@ const entries = [
         href: 'https://meta.wikimedia.org/wiki/User:Schiste/what-now',
         linkText: 'Full essay: User:Schiste/what-now on Meta-Wiki',
       },
+      {
+        href: 'https://spectrum.ieee.org/wikipedia-at-25',
+        linkText: 'Another essay on Wikimedia innovation in the LLM era by a former WMF Board member and long term editor (Dariusz Jemielniak)',
+      },
     ],
   },
 
@@ -294,9 +300,6 @@ const entries = [
     title: 'Wikimedia Futures Lab convenes in Frankfurt',
     datetime: '2026-01-30',
     categories: ['strategy and futurism'],
-
-    faicon: 'wikipedia-w',
-    faiconStyle: 'brands',
     body: 'Over 100 Wikimedians, affiliate representatives, and external experts gather in Frankfurt for the Wikimedia Futures Lab, co-organized by Wikimedia Deutschland and the Wikimedia Foundation. Participants heard from external experts and discussed trends including the rapid evolution of AI and changing audience behavior.',
     links: [
       {
@@ -315,9 +318,6 @@ const entries = [
     title: 'German-language Wikipedia votes to ban LLM-generated content',
     datetime: '2026-02-15',
     categories: ['editing and reverting'],
-
-    faicon: 'wikipedia-w',
-    faiconStyle: 'brands',
     body: 'A community vote (Meinungsbild) on the German-language Wikipedia closes with 208 votes in favor and 108 against, adopting a near-comprehensive ban on LLM-generated or LLM-edited text in articles and discussion pages. Exceptions are made for machine translation, spelling and grammar correction, and research.',
     links: [
       {
@@ -344,9 +344,6 @@ const entries = [
     title: 'English Wikipedia adopts WP:LLM, prohibiting LLM-generated article content',
     datetime: '2026-03-20',
     categories: ['editing and reverting'],
-
-    faicon: 'wikipedia-w',
-    faiconStyle: 'brands',
     body: 'An RfC on the English Wikipedia closes 44 votes to 2 in favor of prohibiting the use of LLMs to generate or rewrite article content. Two narrow exceptions apply: basic copyediting of one\'s own writing (with human review), and translation from another language\'s Wikipedia."',
     links: [
       {
@@ -369,9 +366,6 @@ const entries = [
     title: 'Wikimedia Foundation publishes one-year crawler update, reports blocking 25% of automated requests',
     datetime: '2026-03-26',
     categories: ['scraping'],
-
-    faicon: 'wikipedia-w',
-    faiconStyle: 'brands',
     body: 'A follow-up to the April 2025 crawler post reports that the Foundation is now blocking or throttling approximately 25% of all automated crawler requests, up to billions per day.',
     links: [
       {
@@ -406,6 +400,58 @@ const entries = [
   },
 ];
 
+// Per-year factoids displayed in the year banners that interrupt the
+// timeline rail. Each factoid is either a plain HTML string (rendered
+// as-is inside an <li>) or a structured object with { label, value,
+// href } — the structured form renders as a small-caps label above a
+// large value, optionally wrapped in a link.
+//
+// The convention here is that a year's banner summarizes the *previous*
+// calendar year. The Similarweb ranks below are for the preceding
+// December, sourced from the revision of Wikipedia's "List of
+// most-visited websites" that was live shortly after that December.
+// (Rankings before 2022 are omitted because Similarweb changed
+// methodology, breaking continuity.)
+const yearFactoids = {
+  2020: [],
+  2021: [],
+  2022: [
+    {
+      label: 'Similarweb global rank, Dec 2021',
+      value: '#7',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1068112107',
+    },
+  ],
+  2023: [
+    {
+      label: 'Similarweb global rank, Dec 2022',
+      value: '#7',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1132768096',
+    },
+  ],
+  2024: [
+    {
+      label: 'Similarweb global rank, Dec 2023',
+      value: '#7',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1199395761',
+    },
+  ],
+  2025: [
+    {
+      label: 'Similarweb global rank, Dec 2024',
+      value: '#7',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1268360156',
+    },
+  ],
+  2026: [
+    {
+      label: 'Similarweb global rank, Dec 2025',
+      value: '#9',
+      href: 'https://en.wikipedia.org/w/index.php?title=List_of_most-visited_websites&oldid=1332542122',
+    },
+  ],
+};
+
 // Page details
 const pageTitle = 'Wikimedia and LLM Timeline';
 const pageDescription =
@@ -421,6 +467,17 @@ const categoryColors = {
   'scraping': 'grey',
 };
 
+// Icon per category. Applied to every entry (entries can still override by
+// setting their own `faicon`/`faiconStyle`) and rendered next to the filter
+// checkboxes so filter and timeline icons match.
+const categoryIcons = {
+  'training': { faicon: 'microchip', faiconStyle: 'solid' },
+  'editing and reverting': { faicon: 'pen-to-square', faiconStyle: 'solid' },
+  'strategy and futurism': { faicon: 'compass', faiconStyle: 'solid' },
+  'readership': { faicon: 'book-open-reader', faiconStyle: 'solid' },
+  'scraping': { faicon: 'robot', faiconStyle: 'solid' },
+};
+
 // DON'T EDIT BELOW THIS LINE! --------------------------------------------------------------------
 const getFilters = (entries) => {
   const filters = new Set();
@@ -434,7 +491,12 @@ const getFilters = (entries) => {
   }
   var filtersArray = [...filters];
   filtersArray.sort();
-  return filtersArray;
+  return filtersArray.map((name) => ({
+    name,
+    color: categoryColors[name] || 'grey',
+    faicon: categoryIcons[name] && categoryIcons[name].faicon,
+    faiconStyle: (categoryIcons[name] && categoryIcons[name].faiconStyle) || 'solid',
+  }));
 };
 
 const addCategoriesStringsToEntries = (entries) => {
@@ -444,17 +506,53 @@ const addCategoriesStringsToEntries = (entries) => {
       if (!entry.color) {
         entry.color = categoryColors[entry.categories[0]] || 'grey';
       }
+      if (!entry.faicon) {
+        const iconConfig = categoryIcons[entry.categories[0]];
+        if (iconConfig) {
+          entry.faicon = iconConfig.faicon;
+          entry.faiconStyle = iconConfig.faiconStyle || 'solid';
+        }
+      }
+    }
+    const dateStr = entry.datetime || entry.date;
+    if (dateStr) {
+      entry.year = String(dateStr).slice(0, 4);
     }
   }
   return entries;
 };
 
+const sortEntriesByDate = (entries) =>
+  entries.slice().sort((a, b) => {
+    const da = new Date(a.datetime || a.date).getTime();
+    const db = new Date(b.datetime || b.date).getTime();
+    return da - db;
+  });
+
+const buildYearBanners = (entries, factoids) => {
+  const seen = new Set();
+  const banners = [];
+  for (const entry of entries) {
+    if (entry.year && !seen.has(entry.year)) {
+      seen.add(entry.year);
+      banners.push({
+        year: entry.year,
+        factoids: (factoids && factoids[entry.year]) || [],
+      });
+    }
+  }
+  return banners;
+};
+
+const sortedEntries = addCategoriesStringsToEntries(sortEntriesByDate(entries));
+
 module.exports = {
   header,
   footer,
   showMirrorLinks,
-  entries: addCategoriesStringsToEntries(entries),
+  entries: sortedEntries,
   filters: getFilters(entries),
+  yearBanners: buildYearBanners(sortedEntries, yearFactoids),
   head: {
     title: pageTitle,
     description: pageDescription,

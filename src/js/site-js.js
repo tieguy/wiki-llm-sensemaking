@@ -40,6 +40,7 @@ function hideUnchecked() {
   }
 
   reflowEntries();
+  updateYearBanners();
 }
 
 function checkAll() {
@@ -56,6 +57,7 @@ function checkAll() {
       hide(entries[i]);
   }
   reflowEntries();
+  updateYearBanners();
 }
 
 function isItemInCategories(categories, visibleCategories) {
@@ -80,6 +82,25 @@ function reflowEntries() {
   }
 }
 
+function updateYearBanners() {
+  var banners = document.querySelectorAll('.year-banner');
+  var visibleYears = new Set();
+  var entries = document.querySelectorAll('.timeline-entry[aria-hidden="false"]');
+  for (var i = 0; i < entries.length; i++) {
+    var year = entries[i].dataset.year;
+    if (year) {
+      visibleYears.add(year);
+    }
+  }
+  banners.forEach(function (banner) {
+    if (visibleYears.has(banner.dataset.year)) {
+      banner.setAttribute('aria-hidden', 'false');
+    } else {
+      banner.setAttribute('aria-hidden', 'true');
+    }
+  });
+}
+
 function onload() {
   /* We have JS! */
   var root = document.documentElement;
@@ -93,6 +114,7 @@ function onload() {
 
   /* Flow entries */
   reflowEntries();
+  updateYearBanners();
 
   // Clean up
   document.removeEventListener('DOMContentLoaded', onload);
