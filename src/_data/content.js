@@ -115,6 +115,24 @@ const entries = [
     ],
   },
 
+{
+	id: "enwiki-rsml-rule-2023",
+	title: "English Wikipedia establishes WP:RSML rule",
+	datetime: "2023-12-06",
+	categories: ['editing and reverting'],
+	body:`A new section is added to the Reliable Sources page, titled "Spurious sources produced by machine learning". It states that while ML generation in itself does not disqualify a source, ML has a tendency to hallucinate and provide citations that look correct but do not exist.`,
+	links: [
+		{
+			href: "https://en.wikipedia.org/w/index.php?title=Wikipedia:Reliable_sources&diff=prev&oldid=1188595446",
+			linkText: "Revision to Reliable sources that introduces the new section"
+		},
+		{
+			href: "https://en.wikipedia.org/wiki/Wikipedia:Reliable_sources#Sources_produced_by_machine_learning",
+			linkText: "Reliable sources § Sources produced by machine learning"
+		},
+	],
+	},
+	
   {
     id: 'ai2-dolma-olmo',
     title: 'AI2 releases OLMo and Dolma, acknowledging Wikipedia as training data',
